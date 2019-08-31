@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'menuId'
     }),
     menu.belongsToMany(models.category, {
-      through: 'category-menu',
+      through: 'category_menu',
       foreignKey: 'menuId'
     })
   };
