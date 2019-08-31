@@ -9,11 +9,11 @@ module.exports = {
       }
     ]
 
-    return queryInterface.bulkInsert('category_menus', data, {})
+    return queryInterface.bulkInsert('category_menu', data, {})
   },
 
   down: (queryInterface, Sequelize) => {
 
-    return queryInterface.bulkDelete('category_menus', null, {})
+    return queryInterface.bulkDelete('category_menu', null, {})
   }
 };

@@ -2,7 +2,7 @@ const models = require('../models')
 const Menu = models.menu
 
 exports.index = (req, res) => {
-    Menu.findAll({})
+    Menu.findAll({attributes:['id','name','price']})
         .then(menus => res.status(200).send(menus))
         .catch(err => res.status(400).send(err))
 }

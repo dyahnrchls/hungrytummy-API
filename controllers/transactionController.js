@@ -2,7 +2,7 @@ const models = require('../models')
 const Transaction = models.transaction
 
 exports.index = (req, res) => {
-    Transaction.findAll({})
+    Transaction.findAll({ attributes: ['id', 'tableNumber', 'finishedTime', 'subTotal', 'discount', 'serviceCharge','tax','total', 'isPaid', 'createdAt', 'updatedAt'] })
         .then(transactions => res.status(200).send(transactions))
         .catch(err => res.status(400).send(err))
 }

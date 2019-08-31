@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   transaction.associate = function(models) {
     // associations can be defined here
-    transaction.belongsTo('models.order', {
-      foreignKey: 'menuId'
+    transaction.belongsTo(models.order, {
+      foreignKey: 'transactionId'
     })
   };
   return transaction;

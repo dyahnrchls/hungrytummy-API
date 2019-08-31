@@ -23,7 +23,7 @@ module.exports = {
         allowNull: false,
         references: {
           model: 'transactions',
-          key:'id'
+          key: 'id'
         },
         onUpdate: 'cascade',
         onDelete: 'cascade'

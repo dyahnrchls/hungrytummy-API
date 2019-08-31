@@ -9,12 +9,14 @@ app.use(bodyParser.json())
 app.use(cors())
 
 // routes
-const authRoute = require('./routes/authRoute')
-const dormsRoute = require('./routes/categoriesRoute')
-const usersRoute = require('./routes/menusRoute')
+const categoryRoute = require('./routes/categoryRoute')
+const menuRoute = require('./routes/menuRoute')
+const orderRoute = require('./routes/orderRoute')
+const transactionRoute = require('./routes/transactionRoute')
 
-app.use(authRoute)
-app.use(usersRoute)
-app.use(dormsRoute)
+app.use(categoryRoute)
+app.use(menuRoute)
+app.use(orderRoute)
+app.use(transactionRoute)
 
-app.listen(PORT, () => console.log(`listening on port ${process.env.PORT}!`))
+app.listen(PORT, () => console.log(`listening on port ${PORT}!`))
