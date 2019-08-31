@@ -1,6 +1,6 @@
-# 🔥MAMIKOSTCLONE API🔥
+# API🔥
 
-A straightforward RESTFUL API made with express js, PostgreSQL, MySQL, and [Heroku](https://mamikostclone-api.herokuapp.com) (already deployed) 
+A straightforward RESTFUL API made with Express Js, and MySQL
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
