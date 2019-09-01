@@ -30,6 +30,16 @@ exports.store = (req, res) => {
         .catch(err => res.status(400).send(err))
 }
 
+exports.update = (req, res) => {
+    Transaction.findOne({ where: { id: req.params.id } })
+        .then(transaction => {
+            return transaction.update(req.body)
+                .then(transaction => res.status(200).send(transaction))
+                .catch(err => res.status(400).send(err))
+        })
+        .catch(err => res.status(400).send(err))
+}
+
 exports.delete = (req, res) => {
     const id = req.params.id
 

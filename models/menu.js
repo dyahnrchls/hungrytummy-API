@@ -2,16 +2,13 @@
 module.exports = (sequelize, DataTypes) => {
   const menu = sequelize.define('menu', {
     name: DataTypes.STRING,
-    price: DataTypes.DOUBLE
+    price: DataTypes.DOUBLE,
+    categoryId: DataTypes.INTEGER
   }, {});
   menu.associate = function(models) {
     // associations can be defined here
-    menu.hasMany(models.order, {
-      foreignKey: 'menuId'
-    }),
-    menu.belongsToMany(models.category, {
-      through: 'category_menu',
-      foreignKey: 'menuId'
+    menu.belongsTo(models.category, {
+      foreignKey: 'categoryId'
     })
   };
   return menu;

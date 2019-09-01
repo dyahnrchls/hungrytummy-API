@@ -10,6 +10,7 @@ app.group('/api/v1', (router) => {
 
     router.get('/transactions', transactionController.index)
     router.get('/transaction/:id', transactionController.show)
+    router.patch('/transaction', transactionController.update)
     router.post('/transaction', transactionController.store)
     router.delete('/transaction/:id', transactionController.delete)
 

@@ -8,9 +8,9 @@ exports.index = (req, res) => {
 }
 
 exports.show = (req, res) => {
-    const id = req.params.id
+    const categoryId = req.params.id
 
-    Menu.find({ where: { id } })
+    Menu.findAll({ where: { categoryId } })
         .then(menu => {
             if (menu) {
                 return res.status(200).send(menu)

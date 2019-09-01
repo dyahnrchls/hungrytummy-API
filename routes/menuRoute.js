@@ -9,9 +9,9 @@ const app = express()
 app.group('/api/v1', (router) => {
 
     router.get('/menus', menuController.index)
-    router.get('/menu/:id', menuController.show)
+    router.get('/menu/category/:id', menuController.show)
     router.post('/menu', menuController.store)
-    router.delete('/menu/:id', menuController.delete)
+    router.delete('/menu:id', menuController.delete)
 
 })
 
