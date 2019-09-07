@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     categoryId: DataTypes.INTEGER,
     photoUrl: DataTypes.STRING
   }, {});
-  menu.associate = function(models) {
+  menu.associate = function (models) {
     // associations can be defined here
     menu.belongsTo(models.category, {
       foreignKey: 'categoryId'
