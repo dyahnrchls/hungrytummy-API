@@ -19,4 +19,6 @@ app.use(menuRoute)
 app.use(orderRoute)
 app.use(transactionRoute)
 
-app.listen(PORT, () => console.log(`listening on port ${PORT}!`))
+// app.listen(PORT, () => console.log(`listening on port ${PORT}!`))
+
+app.listen(process.env.PORT, () => console.log(`listening on port ${process.env.PORT}!`))

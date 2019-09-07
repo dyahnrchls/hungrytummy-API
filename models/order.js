@@ -7,14 +7,14 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.DOUBLE,
     status: DataTypes.INTEGER
   }, {});
-  order.associate = function(models) {
+  order.associate = function (models) {
     // associations can be defined here
     order.belongsTo(models.menu, {
       foreignKey: 'menuId'
     }),
-    order.belongsTo(models.transaction, {
-      foreignKey: 'transactionId'
-    })
+      order.belongsTo(models.transaction, {
+        foreignKey: 'transactionId'
+      })
   };
   return order;
 };
