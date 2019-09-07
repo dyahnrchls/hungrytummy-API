@@ -1,8 +1,10 @@
 const models = require('../models')
 const Transaction = models.transaction
+const Order = models.order
+const Menu = models.menu
 
 exports.index = (req, res) => {
-    Transaction.findAll({ attributes: ['id', 'tableNumber', 'finishedTime', 'subTotal', 'discount', 'serviceCharge','tax','total', 'isPaid', 'createdAt', 'updatedAt'] })
+    Transaction.findAll({ attributes: ['id', 'tableNumber', 'finishedTime', 'subTotal', 'discount', 'serviceCharge', 'tax', 'total', 'isPaid', 'createdAt', 'updatedAt'] })
         .then(transactions => res.status(200).send(transactions))
         .catch(err => res.status(400).send(err))
 }
@@ -10,7 +12,17 @@ exports.index = (req, res) => {
 exports.show = (req, res) => {
     const id = req.params.id
 
-    Transaction.find({ where: { id } })
+    Transaction.findOne({
+        include: [
+            {
+                model: Order,
+                include: [
+                    { model: Menu }
+                ]
+            }
+        ],
+        where: { id }
+    })
         .then(transaction => {
             if (transaction) {
                 return res.status(200).send(transaction)
@@ -19,7 +31,6 @@ exports.show = (req, res) => {
             }
         })
         .catch(err => res.status(400).send(err))
-
 }
 
 exports.store = (req, res) => {
