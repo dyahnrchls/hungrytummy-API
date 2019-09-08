@@ -4,7 +4,7 @@ const Order = models.order
 const Menu = models.menu
 
 exports.index = (req, res) => {
-    Transaction.findAll({ attributes: ['id', 'tableNumber', 'finishedTime', 'subTotal', 'discount', 'serviceCharge', 'tax', 'total', 'isPaid', 'createdAt', 'updatedAt'] })
+    Transaction.findAll({ attributes: ['id', 'tableNumber', 'finishedTime', 'subtotal', 'discount', 'serviceCharge', 'tax', 'total', 'isPaid', 'createdAt', 'updatedAt'] })
         .then(transactions => res.status(200).send(transactions))
         .catch(err => res.status(400).send(err))
 }
